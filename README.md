@@ -7,7 +7,9 @@ look no further than nofetch.
 
 simply run `nofetch`, and watch all of your r/unixporn problems go away.
 
-**new:** append`-o` to get just the os name value! useful for piping the ACTUAL distribution or OS name into other scripts/scriptlets
+append`-o` to get just the os name value! useful for piping the ACTUAL distribution or OS name into other scripts/scriptlets
+
+append`-UwU` to get the output uwuified
 
 ![](screenshot.png)
 
@@ -33,3 +35,6 @@ realistically any system that has the following
 - head
 - sed
 - cat
+
+for the -UwU flag
+- uwuify
