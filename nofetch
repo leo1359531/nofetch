@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-uname -o &> /dev/null
+# uname -o &> /dev/null
 
 if [ $(uname -s) == "Darwin" ]
 then
@@ -30,17 +30,24 @@ if you're reading this, it's already too late"
 
 nofetch=$(echo "$array" | shuf -n 1)
 
+
+if [ $1 == "-UwU" ] &> /dev/null
+then 
+  nofetch="$(echo \"$nofetch\" | uwuify)"
+  osname="$(echo \"$osname\" | uwuify)"
+fi
+
 if [ $1 == "-o" ] &> /dev/null || [ $2 == "-o" ] &> /dev/null
 then
 	echo "$osname"
 elif [[ "$osname" == *"BSD"* ]]
 then
-	echo " "
+	# echo " "
 	echo "> $nofetch" | tr '[:upper:]' '[:lower:]'
 	echo "> $(uname -smr)" | tr '[:upper:]' '[:lower:]'
-	echo " "
+	# echo " "
 else
-	echo " "
+	# echo " "
 	echo "> $nofetch" | tr '[:upper:]' '[:lower:]'
 	echo "> $osname $(uname -smr)" | tr '[:upper:]' '[:lower:]'
 	echo " "
