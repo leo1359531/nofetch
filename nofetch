@@ -33,8 +33,8 @@ nofetch=$(echo "$array" | shuf -n 1)
 
 if [ $1 == "-UwU" ] &> /dev/null
 then 
-  nofetch="$(echo \"$nofetch\" | uwuify)"
-  osname="$(echo \"$osname\" | uwuify)"
+  nofetch="$(echo \"$nofetch\" | uwuify | sed s/\"//g)"
+  osname="$(echo \"$osname\" | uwuify | sed s/\"//g)"
 fi
 
 if [ $1 == "-o" ] &> /dev/null || [ $2 == "-o" ] &> /dev/null
@@ -43,12 +43,12 @@ then
 elif [[ "$osname" == *"BSD"* ]]
 then
 	# echo " "
-	echo "> $nofetch" | tr '[:upper:]' '[:lower:]'
-	echo "> $(uname -smr)" | tr '[:upper:]' '[:lower:]'
+	echo "$nofetch" | tr '[:upper:]' '[:lower:]'
+	echo "$(uname -smr)" | tr '[:upper:]' '[:lower:]'
 	# echo " "
 else
 	# echo " "
-	echo "> $nofetch" | tr '[:upper:]' '[:lower:]'
-	echo "> $osname $(uname -smr)" | tr '[:upper:]' '[:lower:]'
+	echo "$nofetch" | tr '[:upper:]' '[:lower:]'
+	echo "$osname $(uname -smr)" | tr '[:upper:]' '[:lower:]'
 	echo " "
 fi
